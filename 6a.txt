@@ -1,0 +1,28 @@
+Zad 1. Tabela zamówienia (id_produktu, nazwa_produktu, id_klienta, nazwa_klienta, data_zamowienia, cena_produktu, iloœæ, VAT, suma_brutto, suma_netto) okreœl wszystkie zale¿noœci funkcyjne.
+Przyjmij nastêpuj¹ce za³o¿enia: 
+- VAT ró¿ni siê w zale¿noœci od typu produktu (na przyk³ad ksi¹¿ki 5%, pieczywo 8% itd.). 
+- Suma brutto to suma netto powiêkszona o VAT. 
+- Zamówienia klientów w tym samym dniu s¹ ³¹czone. Mamy tylko jedno zamówienie dla danego klienta dziennie (zamówienie danego produktu!). 
+- Nazwy produktów i nazwy klientów s¹ unikalne
+
+id_produktu -> nazwa_produktu, cena_produktu, VAT 
+nazwa_produktu -> VAT
+id_klienta -> nazwa_klienta, data_zamowienia, id_produktu
+suma_netto -> cena_produktu, iloœæ
+suma_brutto -> suma_netto , VAT
+
+Zad 2. Wypisz wszystkie klucze kandyduj¹ce.
+nazwa_klienta + data_zamowienia
+id_klienta
+id_klienta + id_produktu
+
+Zad 3. Tabela pomieszczenia (id_pomieszczenia, numer_pomieszczenia, id_budynku, powierzchnia, liczba_okien, liczba_drzwi, ulica, miasto, kod_pocztowy) okreœl wszystkie zale¿noœci funkcyjne oraz klucze kandyduj¹ce.
+- id_pomieszczenia to autoinkrementowany, unikalny identyfikator pomieszczenia w tabeli.
+
+Id_pomieszczenia -> numer_pomieszczenia, id_budynku, powierzchnia, liczba_okien, liczba_drzwi
+Id_budynku  -> ulica, miasto, kod_pocztowy
+Kod_pocztowy -> miasto
+Ulica, miasto -> kod_pocztowy
+
+Klucze:
+Numer_pomieszczenia + id_budynku; Id_pomieszczenia
